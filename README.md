@@ -6,6 +6,7 @@ Python Client for Connectwise REST API
 Use Python? This library brings the [Connectwise REST API] to your Python application.
 
 The Python Client for Connectwise Rest API is a Python Client library for the following Connectwise REST API's
+
 APIs:
 
  - [Company]
