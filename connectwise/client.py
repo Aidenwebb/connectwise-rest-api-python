@@ -46,8 +46,8 @@ class Client(object):
 
         self._default_headers = {"Authorization": "Basic %s" % auth_token,
                                  "Content-Type": "application/json"}
-        self.site = base_url
-        self.api_url = "https://{site}/v4_6_release/apis/3.0".format(site=self.site)
+        self.base_url = base_url
+        self.api_url = "https://{base_url}/v4_6_release/apis/3.0".format(base_url=self.base_url)
 
         self.requests_kwargs = {}
         self.requests_kwargs.update({
@@ -62,7 +62,7 @@ class Client(object):
     def _get(self, url, parameters):
         full_path = self.api_url + url
         resp = self.connection.get(full_path, params=parameters)
-        print(resp.url)
+        print("Calling URL: {}".format(resp.url))
         return resp
 
     def _post(self, url, json):
@@ -116,7 +116,9 @@ class Client(object):
 
 from connectwise import company
 from connectwise import service
+from connectwise import time
 Client.company = company
 Client.service = service
+Client.time = time
 
 
