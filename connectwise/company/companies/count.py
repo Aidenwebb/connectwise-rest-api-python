@@ -1,7 +1,7 @@
-def get_companies(client, db_rid=None, company_identifier=None, company_name=None, status=None, zip=None,
+def count_companies(client, db_rid=None, company_identifier=None, company_name=None, status=None, zip=None,
                   phone_number=None, fax_number=None, website=None):
     """
-    Gets Companies with a particular set of optional conditions.
+    Counts Companies with a particular set of optional conditions.
 
     :param client: Pass the authorised connectwise client object
     :type client: Object
@@ -28,7 +28,6 @@ def get_companies(client, db_rid=None, company_identifier=None, company_name=Non
     return.status_code - status code fo the request
     """
 
-
     conditionstring = ""
     if db_rid:
         conditionstring = client._add_condition(conditionstring, 'id', db_rid)
@@ -51,4 +50,4 @@ def get_companies(client, db_rid=None, company_identifier=None, company_name=Non
         "conditions": conditionstring
     }
 
-    return client._get("/company/companies/", parameters=parameters)
+    return client._get("/company/companies/count", parameters=parameters)

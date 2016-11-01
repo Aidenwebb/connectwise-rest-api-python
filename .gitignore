@@ -45,3 +45,32 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# IDE related files and directories
+.idea
+__pycache__
+
+#Internal development files
+toy.py
+
+#Release Generated Files#
+.eggs/
+build/
+dist/
+_build
+
+#Compiled Source#
+*.pyc
+
+#testing
+.coverage
+.tox
+env
+nosetests.xml
+connectwise.egg-info
+*.egg
+test - private
+
+# Future release - testing
+.travis.yml
+tox.ini

@@ -5,7 +5,7 @@ Python Client for Connectwise REST API
 
 Use Python? This library brings the [Connectwise REST API] to your Python application.
 
-The Python Client for Google Maps Services is a Python Client library for the following Google Maps
+The Python Client for Connectwise Rest API is a Python Client library for the following Connectwise REST API's
 APIs:
 
  - [Company]
@@ -82,7 +82,7 @@ APIs:
 ## Requirements
 
  - Python 2.7 or later.
- - A Google Maps API key.
+ - A Connectwise API key or token.
  
  ## Installation
 

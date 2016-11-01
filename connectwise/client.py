@@ -61,7 +61,9 @@ class Client(object):
 
     def _get(self, url, parameters):
         full_path = self.api_url + url
-        return self.connection.get(full_path, params=parameters)
+        resp = self.connection.get(full_path, params=parameters)
+        print(resp.url)
+        return resp
 
     def _post(self, url, json):
         full_path = self.api_url + url
@@ -92,17 +94,17 @@ class Client(object):
 
         return path + "?" + urlencode(params)
 
-    def _add_condition(self, string, add_string, add_value):
+    def _add_condition(self, string, condition_name, condition_value):
         if string == '':
-            if type(add_value) is not str:
-                result = '{}={}'.format(add_string, add_value)
-            else:
-                result = '{}="{}"'.format(add_string, add_value)
+            if type(condition_value) is int or type(condition_value) is bool:
+                result = '{}={}'.format(condition_name, condition_value)
+            elif type(condition_value) is str:
+                result = '{}="{}"'.format(condition_name, condition_value)
         else:
-            if type(add_value) is not str:
-                result = '{} and {}={}'.format(string, add_string, add_value)
-            else:
-                result = '{} and {}="{}"'.format(string, add_string, add_value)
+            if type(condition_value) is int or type(condition_value) is bool:
+                result = '{} and {}={}'.format(string, condition_name, condition_value)
+            elif type(condition_value) is str:
+                result = '{} and {}="{}"'.format(string, condition_name, condition_value)
         print(result)
         return result
 
