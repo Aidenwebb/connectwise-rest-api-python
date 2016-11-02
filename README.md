@@ -99,5 +99,5 @@ import connectwise
 cwclient = connectwise.Client('connectwisesubdomain.yourdomain.com', auth_token="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==")
 
 # Retreiving a set of contacts
-geocode_result = cwclient.company.contacts.get(first_name="userfirstname", company_identifier="CID")
+contact_result = cwclient.company.contacts.get(cwclient, first_name="userfirstname", company_identifier="CID")
 ```
