@@ -1,4 +1,4 @@
-def patch_ticket(client, configuration_id, patches):
+def patch_ticket(client, ticket_id, patches):
     """
 
     :param patches: List of patches in format [
@@ -11,5 +11,11 @@ def patch_ticket(client, configuration_id, patches):
     data = []
 
     data = patches
-    print("Patching {} with Data: {}".format(configuration_id, data))
-    return client._patch("/service/tickets/{}/".format(configuration_id), json=data)
+    print("Patching {} with Data: {}".format(ticket_id, data))
+    return client._patch("/service/tickets/{}/".format(ticket_id), json=data)
+
+def update_status(client, ticket_id, status_id):
+
+    data = ["replace", "/status/id", status_id]
+
+    return client._patch("/service/tickets/{}/".format(ticket_id), json=data)

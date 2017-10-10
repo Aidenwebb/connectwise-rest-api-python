@@ -12,28 +12,36 @@ if sys.version_info <= (2, 4):
 
 
 requirements = [
-    'requests<=2.11.1',
+    'certifi==2017.7.27.1',
+    'chardet==3.0.4',
+    'idna==2.6',
+    'requests==2.18.4',
+    'urllib3==1.22',
 ]
 
 setup(
-    name='connectwise',
-    version='0.0.2a-dev',
+    name='pyRESTcw',
+    version='0.0.4a-dev',
+    packages=['test', 'connectwise', 'connectwise.time', 'connectwise.time.entries', 'connectwise.company',
+              'connectwise.company.contacts', 'connectwise.company.companies', 'connectwise.company.configurations',
+              'connectwise.service', 'connectwise.service.boards', 'connectwise.service.tickets',
+              'connectwise.service.boardstatuses'],
     description='Python client library for Connectwise REST API',
     scripts=[],
     url="",
-    packages=["connectwise"],
     licence="Apache 2.0",
     platforms="Posix; MacOS X; Windows",
     setup_requirements = requirements,
     install_requirements = requirements,
 classifiers=['Development Status :: 5 - Alpha',
-                   'Intended Audience :: Developers',
-                   'License :: OSI Approved :: Apache Software License',
-                   'Operating System :: OS Independent',
-                   'Programming Language :: Python :: 2.7',
-                   'Programming Language :: Python :: 3.2',
-                   'Programming Language :: Python :: 3.4',
-                   'Topic :: Internet',
+                    'Intended Audience :: Developers',
+                    'License :: OSI Approved :: Apache Software License',
+                    'Operating System :: OS Independent',
+                    'Programming Language :: Python :: 2.7',
+                    'Programming Language :: Python :: 3.2',
+                    'Programming Language :: Python :: 3.4',
+                    'Programming Language :: Python :: 3.6',
+                    'Topic :: Internet',
                    ]
 
 )
