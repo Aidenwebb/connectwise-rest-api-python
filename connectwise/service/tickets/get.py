@@ -1,4 +1,4 @@
-def get_tickets(client, db_rid=None, summary=None, record_type=None, board_name="active", status_name=None,
+def get_tickets(client, db_rid=None, summary=None, record_type=None, board_name=None, status_name=None,
                 project_name=None,
                 phase_name=None, company_identifier=None, type=None, subtype=None, severity=None, impact=None,
                 page_size=1000):

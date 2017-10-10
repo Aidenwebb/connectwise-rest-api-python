@@ -1,5 +1,5 @@
 """
-Core client functoinality, common across all API requests
+Core client functionality, common across all API requests
 """
 
 import base64
@@ -113,6 +113,25 @@ class Client(object):
         last_name = contact_name.split(' ')[1]
         contact = self.company.contacts.get(self, first_name=first_name, last_name=last_name, company_identifier=company_identifier).json()
         return contact[0]['id']
+
+    class PatchGroup(object):
+
+        def __init__(self):
+            self.patches = []
+
+        def __repr__(self):
+            string = ''
+            for k, v in self.__dict__.items():
+                string = ''.join([string, '{}: {}\n'.format(k, v)])
+            return string
+
+        def add(self, op, path, value):
+            patch_op = {
+                "op": op,
+                "path": path,
+                "value": value
+            }
+            self.patches.append(patch_op)
 
 from connectwise import company
 from connectwise import service
