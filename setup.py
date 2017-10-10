@@ -21,7 +21,7 @@ requirements = [
 
 setup(
     name='pyRESTcw',
-    version='0.0.4a-dev',
+    version='0.0.5a-dev',
     packages=['test', 'connectwise', 'connectwise.time', 'connectwise.time.entries', 'connectwise.company',
               'connectwise.company.contacts', 'connectwise.company.companies', 'connectwise.company.configurations',
               'connectwise.service', 'connectwise.service.boards', 'connectwise.service.tickets',
