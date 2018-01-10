@@ -55,6 +55,7 @@ toy.py
 
 #Release Generated Files#
 .eggs/
+*.egg-info/
 build/
 dist/
 _build

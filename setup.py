@@ -21,11 +21,11 @@ requirements = [
 
 setup(
     name='pyRESTcw',
-    version='0.0.6a-dev',
+    version='0.0.9a-dev',
     packages=['test', 'connectwise', 'connectwise.time', 'connectwise.time.entries', 'connectwise.company',
               'connectwise.company.contacts', 'connectwise.company.companies', 'connectwise.company.configurations',
               'connectwise.service', 'connectwise.service.boards', 'connectwise.service.tickets',
-              'connectwise.service.boardstatuses'],
+              'connectwise.service.boardstatuses', 'connectwise.service.priorities'],
     description='Python client library for Connectwise REST API',
     scripts=[],
     url="",

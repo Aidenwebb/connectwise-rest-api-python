@@ -1,7 +1,7 @@
 def get_time_entries(client, db_rid=None, company_identifier=None, charge_to_id=None, charge_to_type=None, member_identifier=None, work_type_name=None, work_role_name=None,
                      billable_option_text=None,
                      added_to_note_description=None, added_to_note_internal_analysis=None, added_to_note_resolution=None, emailed_contact=None, emailed_cc=None,
-                     entered_by=None, page_size=1000):
+                     entered_by=None, page_size=1000, verbose=False):
     conditionstring = ""
 
     if db_rid:
@@ -33,11 +33,11 @@ def get_time_entries(client, db_rid=None, company_identifier=None, charge_to_id=
     if entered_by:
         conditionstring = client._add_condition(conditionstring, 'enteredBy', entered_by)
 
-    print(conditionstring)
+    if verbose is True: print(conditionstring)
     parameters = {
         "conditions": conditionstring,
         "pageSize": page_size
 
     }
-    print(parameters)
+    if verbose is True: print(parameters)
     return client._get("/time/entries/", parameters=parameters)

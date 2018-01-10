@@ -1,4 +1,4 @@
-def get_configurations(client, db_rid=None, name=None, type_name=None, status="active", company_identifier=None, serial_number=None):
+def get_configurations(client, db_rid=None, name=None, type_name=None, status="active", company_identifier=None, serial_number=None, verbose=False):
     """
 
     :param client: Pass the authorised connectwise client object
@@ -38,10 +38,10 @@ def get_configurations(client, db_rid=None, name=None, type_name=None, status="a
     if serial_number:
         conditionstring = client._add_condition(conditionstring, 'serialNumber', serial_number)
 
-    print(conditionstring)
+    if verbose is True: print(conditionstring)
     parameters = {
         "conditions": conditionstring,
         "pageSize": 1000
     }
-    print(parameters)
+    if verbose is True: print(parameters)
     return client._get("/company/configurations/", parameters=parameters)

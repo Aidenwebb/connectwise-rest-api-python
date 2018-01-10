@@ -1,5 +1,5 @@
 def get_companies(client, db_rid=None, company_identifier=None, company_name=None, status=None, zip=None,
-                  phone_number=None, fax_number=None, website=None):
+                  phone_number=None, fax_number=None, website=None, verbose=False):
     """
     Gets Companies with a particular set of optional conditions.
 
@@ -46,7 +46,7 @@ def get_companies(client, db_rid=None, company_identifier=None, company_name=Non
         conditionstring = client._add_condition(conditionstring, 'faxNumber', fax_number)
     if website:
         conditionstring = client._add_condition(conditionstring, 'website', website)
-    print(conditionstring)
+    if verbose is True: print(conditionstring)
     parameters = {
         "conditions": conditionstring
     }

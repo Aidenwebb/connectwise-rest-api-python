@@ -69,14 +69,15 @@ class Client(object):
         full_path = self.api_url + url
         return self.connection.post(full_path, json=json)
 
-    def _patch(self, url, json):
+    def _patch(self, url, json, verbose=False):
+        if verbose is True: print("Patching {} with Data: {}".format(url, json))
         full_path = self.api_url + url
         return self.connection.patch(full_path, json=json)
 
     def _generate_auth(self, company_id, public_key, private_key):
         token = "{}+{}:{}".format(company_id, public_key, private_key)
         token = base64.b64encode(bytes(token, 'utf-8'))
-        print(token)
+        #print(token)
         token = token.decode('utf-8')
         return token
 
@@ -94,7 +95,7 @@ class Client(object):
 
         return path + "?" + urlencode(params)
 
-    def _add_condition(self, string, condition_name, condition_value):
+    def _add_condition(self, string, condition_name, condition_value, verbose=False):
         if string == '':
             if type(condition_value) is int or type(condition_value) is bool:
                 result = '{}={}'.format(condition_name, condition_value)
@@ -105,7 +106,7 @@ class Client(object):
                 result = '{} and {}={}'.format(string, condition_name, condition_value)
             elif type(condition_value) is str:
                 result = '{} and {}="{}"'.format(string, condition_name, condition_value)
-        print(result)
+        if verbose is True: print(result)
         return result
 
     def _get_contact_id(self, contact_name, company_identifier):
@@ -125,12 +126,19 @@ class Client(object):
                 string = ''.join([string, '{}: {}\n'.format(k, v)])
             return string
 
-        def add(self, op, path, value):
+        def add(self, op, path, value=None):
+
             patch_op = {
                 "op": op,
-                "path": path,
-                "value": value
+                "path": path
             }
+
+            if op == "replace":
+                patch_op['value'] = value
+
+            if op == "add":
+                patch_op['value'] = [value]
+
             self.patches.append(patch_op)
 
 from connectwise import company
