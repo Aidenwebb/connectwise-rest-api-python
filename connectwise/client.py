@@ -44,14 +44,14 @@ class Client(object):
         else:
             self.auth_token = auth_token
 
-        self._default_headers = {"Authorization": "Basic %s" % auth_token,
+        self._default_headers = {"Authorization": "Basic %s" % self.auth_token,
                                  "Content-Type": "application/json"}
         self.base_url = base_url
         self.api_url = "https://{base_url}/v4_6_release/apis/3.0".format(base_url=self.base_url)
 
         self.requests_kwargs = {}
         self.requests_kwargs.update({
-            "headers": {"Authorization": "Basic %s" % auth_token,
+            "headers": {"Authorization": "Basic %s" % self.auth_token,
                                  "Content-Type": "application/json"},
             "verify": True, # NOTE(cbro): verify SSL certs.
         })
