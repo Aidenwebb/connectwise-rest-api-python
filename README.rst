@@ -87,7 +87,7 @@ APIs:
  
  ## Installation
 
-    $ pip install -U connectwise
+    $ pip install pyRESTcw
     
 ## Usage
 

@@ -29,11 +29,13 @@ def get_tickets(client, db_rid=None, summary=None, record_type=None, board_name=
     if impact:
         conditionstring = client._add_condition(conditionstring, 'impact', impact)
 
-    if verbose is True: print(conditionstring)
+    if verbose is True:
+        print(conditionstring)
     parameters = {
         "conditions": conditionstring,
         "pageSize": page_size
 
     }
-    if verbose is True: print(parameters)
+    if verbose is True:
+        print(parameters)
     return client._get("/service/tickets/", parameters=parameters)
