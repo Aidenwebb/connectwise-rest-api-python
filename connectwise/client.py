@@ -17,7 +17,7 @@ class Client(object):
     """Performs requests to the Connectwise API web services"""
 
     def __init__(self, base_url, auth_token=None, company_identifier=None, public_key=None,
-                 private_key=None):
+                 private_key=None, client_id=None):
         """
         :param base_url: Base URL of your connectwise installation. eg: connectwise.exampleit.com
         :type base_url: string
@@ -63,6 +63,9 @@ class Client(object):
             "verify": True,  # NOTE(cbro): verify SSL certs.
         })
 
+        if client_id:
+            self._default_headers['clientID'] = client_id
+            self.requests_kwargs['clientID'] = client_id
         self.connection = requests.Session()
         self.connection.headers = self._default_headers
 
