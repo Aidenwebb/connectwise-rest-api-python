@@ -1,4 +1,4 @@
-__version__ = "0.0.9a-dev"
+__version__ = "0.0.10"
 
 from connectwise.client import Client
 import connectwise.exceptions

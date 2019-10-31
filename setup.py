@@ -10,17 +10,15 @@ if sys.version_info <= (2, 4):
     print >> sys.stderr, error
     sys.exit(1)
 
-requirements = [
-    'certifi==2017.7.27.1',
-    'chardet==3.0.4',
-    'idna==2.6',
-    'requests==2.18.4',
-    'urllib3==1.22',
-]
+with open('requirements.txt', 'r') as f:
+    requirements = f.read()
+
+with open('test_requirements.txt', 'r') as f:
+    test_requirements = f.read()
 
 setup(
     name='pyRESTcw',
-    version='0.0.10a-dev',
+    version='0.0.10',
     packages=['test', 'connectwise', 'connectwise.time', 'connectwise.time.entries',
               'connectwise.company',
               'connectwise.company.contacts', 'connectwise.company.companies',
@@ -29,11 +27,12 @@ setup(
               'connectwise.service.boardstatuses', 'connectwise.service.priorities'],
     description='Python client library for Connectwise REST API',
     scripts=[],
-    url="",
+    url="https://github.com/Aidenwebb/connectwise-rest-api-python",
     licence="Apache 2.0",
     platforms="Posix; MacOS X; Windows",
     setup_requirements=requirements,
     install_requirements=requirements,
+    tests_require=test_requirements,
     classifiers=['Development Status :: 5 - Alpha',
                  'Intended Audience :: Developers',
                  'License :: OSI Approved :: Apache Software License',
