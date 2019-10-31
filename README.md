@@ -83,11 +83,12 @@ APIs:
 ## Requirements
 
  - Python 2.7 or later.
- - A Connectwise API key or token.
+ - A ConnectWise API key or token.
+ - A ConnectWise ClientID
  
  ## Installation
 
-    $ pip install -U connectwise
+    $ pip install -U pyRESTcw
     
 ## Usage
 
