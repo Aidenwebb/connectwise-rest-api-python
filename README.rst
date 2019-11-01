@@ -101,7 +101,7 @@ This example uses the [Companies][Contacts] API with an Auth key:
 ```python
 import connectwise
 
-cwclient = connectwise.Client('connectwisesubdomain.yourdomain.com', auth_token="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==")
+cwclient = connectwise.Client('connectwisesubdomain.yourdomain.com', auth_token="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==", Client_ID="12345")
 
 # Retreiving a set of contacts
 contact_result = cwclient.company.contacts.get(cwclient, first_name="userfirstname", company_identifier="CID")
