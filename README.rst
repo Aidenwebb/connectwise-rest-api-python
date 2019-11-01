@@ -88,7 +88,11 @@ APIs:
  
  ## Installation
 
-    $ pip install -U pyRESTcw
+
+
+
+    $ pip install pyRESTcw
+
     
 ## Usage
 

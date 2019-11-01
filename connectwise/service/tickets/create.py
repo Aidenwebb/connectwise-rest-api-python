@@ -19,6 +19,7 @@ def create_new_ticket(client, summary, company_identifier, contact_name=None, ti
     if initial_description:
         data['initialDescription'] = initial_description
 
-    if verbose is True: print(data)
+    if verbose is True:
+        print(data)
 
     return client._post('/service/tickets/', json=data)
