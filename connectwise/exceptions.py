@@ -2,6 +2,7 @@
 Defines exceptions that are thrown by the Connectwise client
 """
 
+
 class ApiError(Exception):
     """Represents an exception returned by the remote API."""
     def __init__(self, status, message=None):
@@ -13,6 +14,7 @@ class ApiError(Exception):
             return self.status
         else:
             return "%s (%s)" % (self.status, self.message)
+
 
 class TransportError(Exception):
     """Something went wrong while trying to execute the request."""
@@ -26,6 +28,7 @@ class TransportError(Exception):
 
         return "An unknown error occurred"
 
+
 class HTTPError(TransportError):
     """An unexpected HTTP error occured"""
     def __init__(self, status_code):
@@ -34,9 +37,11 @@ class HTTPError(TransportError):
     def __str__(self):
         return "HTTP Error: %d" % self.status_code
 
+
 class Timeout(Exception):
     """The request has timed out."""
     pass
+
 
 class _RetriableRequest(Exception):
     """Signifies that the request can be retried."""

@@ -1,5 +1,5 @@
 include requirements.txt
-include requirements-dev.txt
-include README.md
+include test_requirements.txt
+include README.rst
 # include changelog.md
-include LICENSE
+include LICENSE.txt
