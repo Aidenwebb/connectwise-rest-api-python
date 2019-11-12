@@ -74,6 +74,7 @@ APIs:
  - - [TODO: Complete Modules List]
  - [Service]
  - - [TODO: Complete Modules List]
+ - - [Notes] - "CREATE", "UPDATE", "GET" Development Started
  - - [Tickets] - "CREATE" Development Started
  - [System] - Development Yet Not Started
  - - [TODO: Complete Modules List]
