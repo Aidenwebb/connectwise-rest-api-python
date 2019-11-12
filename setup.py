@@ -21,7 +21,7 @@ with open('test_requirements.txt', 'r') as f:
 
 setup(
     name='pyRESTcw',
-    version='0.0.12',
+    version='0.0.13',
     packages=['test', 'connectwise', 'connectwise.time', 'connectwise.time.entries',
               'connectwise.company',
               'connectwise.company.contacts', 'connectwise.company.companies',
