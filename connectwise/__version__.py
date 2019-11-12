@@ -1,0 +1,10 @@
+# Connectwise Python RestAPI
+__version__ = '0.0.15'
+__title__ = 'pyRESTcw'
+__description__ = 'Python client library for Connectwise REST API'
+__url__ = 'https://github.com/Aidenwebb/connectwise-rest-api-python'
+__author__ = 'Aidenwebb'
+__author_email__ = 'unknown@unknown.com'
+__build__ = ''
+__license__ = 'Apache 2.0'
+__cake__ = u''
